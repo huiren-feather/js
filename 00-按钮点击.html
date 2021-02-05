@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>按钮点击，显示时间</h1>
+    <p>this is a paragraph</p>
+    <button type="button" onclick="displayDate()">显示日期</button>
+    <script>
+        function displayDate() {
+            document.querySelector('p').innerHTML = Date();
+        }
+    </script>
+</body>
+
+</html>

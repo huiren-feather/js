@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.play = function() {
+                console.log("天天打游戏");
+            }
+        }
+        var person = new Person("雏田", 18, "女");
+        console.log(person instanceof Person);
+        // 实例对象由构造函数老创建
+        // 实例对象会指向它的构造函数
+        console.dir(Person); //dir：把这个对象的结构显示出来
+        console.dir(person);
+        // 实例对象的构造器（构造函数）
+        console.log(person.constructor);
+        // 实例对象的构造器是指向Person的，结果是true，所以，这个实例对象person就是通过Person来创建的
+        console.log(person.constructor == Person);
+
+        //实例对象是
+        console.log(person.__proto__.constructor == Person);
+        console.log(person.__proto__.constructor == Person.prototype.constructor);
+
+
+        //总结：
+        // 实例对象和构造函数的关系：
+        // 1. 实例对象由构造函数创建---创建的过程叫实例化
+        // 2.如何判断对象是不是这个数据类型
+        // 2.1通过构造器的方式：实例对象.构造器==构造函数名字
+        // 2.2对象 instanceof 构造函数名字
+        // 注：尽可能使用第二种方式来识别，why：原型讲完再说
+    </script>
+</body>
+
+</html>

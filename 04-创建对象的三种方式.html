@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+                                                                                                                       创建对象的三种方式：
+                                                                                                                       1.字面量的方式
+                                                                                                                       2.调用系统的构造函数
+                                                                                                                       3.自定义构造函数方式 
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        */
+        //    1.字面量
+        var person1 = {
+            name: "卡卡西",
+            age: 20,
+            sex: "男",
+            eat: function() {
+                console.log('吃肉');
+            },
+            readBook: function() {
+                console.log('起热天堂');
+            }
+        };
+        //2.    调用系统的构造函数
+        var person2 = new Object();
+        person2.name = '大蛇丸';
+        person2.age = 30;
+        person2.sex = '男';
+        person2.eat = function() {
+            console.log('吃榴莲');
+        };
+        person2.play = function() {
+            console.log('这个小蛇这好玩');
+        };
+
+
+        console.log(person2 instanceof Object);
+        // 3.自定义构造函数
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.play = function() {
+                console.log("天天打游戏");
+            }
+        }
+        var person = new Person("雏田", 18, "女");
+        console.log(person instanceof Person);
+
+        // 4.工厂函数
+        function createPerson(name, age) {
+            return {
+                name: name,
+                age: age,
+                sayName: function() {
+                    console.log(this.name)
+                }
+            }
+        }
+        var per1 = createPerson("楚河", "3000");
+        console.log(per1 instanceof createPerson);
+        // 缺点：无法获取对象类型
+    </script>
+</head>
+
+<body>
+    <!--  -->
+</body>
+
+</html>
